@@ -22,8 +22,8 @@ public class CourseService {
         courseRepository.saveAndFlush(course);
     }
 
-    public void deleteCourse(Course course) {
-        courseRepository.delete(course);
+    public void deleteCourseById(UUID id) {
+        courseRepository.delete(courseRepository.findById(id).get());
     }
 
     public void findCourseById(Course course) {
